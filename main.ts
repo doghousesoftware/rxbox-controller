@@ -1,14 +1,20 @@
+input.onButtonPressed(Button.A, function () {
+    basic.showString("am")
+    Sender(0)
+})
+input.onButtonPressed(Button.B, function () {
+    basic.showString("pm")
+    Sender(1)
+})
 function Sender (ampm: number) {
     if (ampm == 0) {
         radio.sendString("AM")
         AMSentSignal = 1
         PMSentSignal = 0
-        basic.showString("am")
     } else {
         radio.sendString("PM")
         PMSentSignal = 1
         AMSentSignal = 0
-        basic.showString("pm")
     }
 }
 let PMSentSignal = 0
